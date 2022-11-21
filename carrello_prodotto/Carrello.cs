@@ -9,28 +9,41 @@ namespace carrello_prodotto
      public class Carrello
      {
         private string _id;
-        private Prodotto[] prodotti = new Prodotto[100];
+        private Prodotto[] prodotti; 
         private int counter;
 
         public Carrello(string id)
         {
             Id = id;
+            prodotti = new Prodotto[999];
         }
 
         public string Id
         {
-            get { return _id; }
-            set { _id = value; }
+            get { 
+                return _id; 
+            }
+            set { 
+                _id = value; 
+            }
         }
 
         public void Aggiungi(Prodotto p)
         {
-            p.Id = prodotti[counter].Id;
+            prodotti[counter]=p;
             counter++;
         }
         public void Rimuovi(Prodotto p)
         {
-            p.Id = prodotti[counter].Id;
+            for(int i=0; i <prodotti.Length; i++)
+            {
+                if (prodotti[i] == p)
+                {
+                    prodotti[i] = null;
+                }
+
+            }
+
             counter--;
         }
         public int getProdotti()
