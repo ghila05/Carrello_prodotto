@@ -75,7 +75,7 @@ namespace carrello_prodotto
                     if (listView1.Items[i].SubItems[0].Text == v.Id)
                     {
                         if (listView1.Items[i].SubItems[listView1.Items[i].SubItems.Count-1].Text == "")
-                            listView1.Items[i].SubItems[listView1.Items[i].SubItems.Count - 1].Text = "0";
+                            listView1.Items[i].SubItems[listView1.Items[i].SubItems.Count - 1].Text = "0"; //ancora da sistemare la quantità di prodotti uguali
 
                         listView1.Refresh();
                         //listView1.Items[i].SubItems[listView1.Items[i].SubItems.Count - 1].Text = $"{(int.Parse(listView1.Items[i].SubItems[listView1.Items[i].SubItems.Count - 1].Text) + 1)}";
